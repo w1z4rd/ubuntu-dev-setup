@@ -1,0 +1,18 @@
+# ubuntu-dev-setup #
+Installs the following
+* zsh (http://www.zsh.org/)
+* oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+* flux (https://justgetflux.com/)
+* vim-nox (http://www.vim.org/)
+* derek-wyatt vim-config (https://github.com/derekwyatt/vim-config)
+* gnome-terminal-colors-solarized (https://github.com/Anthony25/gnome-terminal-colors-solarized)
+* unzip (https://en.wikipedia.org/wiki/Zip_%28file_format%29)
+* curl (http://curl.haxx.se/)
+* oracle-java8 (http://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html)
+* maven-3.3.9 (https://maven.apache.org/index.html)
+* python 2.7 (https://www.python.org/)
+* python-dev (http://packages.ubuntu.com/precise/python2.7-dev)
+* python-setuptools (https://pypi.python.org/pypi/setuptools)
+* g++ (http://www.cprogramming.com/g++.html)
+* virtualbox (https://www.virtualbox.org/)
+* vagrant (https://www.vagrantup.com/)

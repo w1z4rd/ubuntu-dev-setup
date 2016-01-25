@@ -16,3 +16,5 @@ Installs the following
 * g++ (http://www.cprogramming.com/g++.html)
 * virtualbox (https://www.virtualbox.org/)
 * vagrant (https://www.vagrantup.com/)
+* postgresql (http://www.postgresql.org/)
+* pgadmin3 (http://www.pgadmin.org/)

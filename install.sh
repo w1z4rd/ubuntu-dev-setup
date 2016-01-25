@@ -58,4 +58,8 @@ sudo apt-get install -y fluxgui
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-color-solarized
 cd /tmp/gnome-terminal-color-solarized
 sudo ./install.sh
+# posgresql 9.4
+sudo apt-get install -y posgresql-9.4
+# pgadmin3
+sudo apt-get install -y pgadmin3
 cd $dir

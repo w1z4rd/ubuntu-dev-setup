@@ -2,6 +2,10 @@
 dir=`pwd`
 #dconf-cli
 sudo apt-get install -y dconf-cli
+#tmux
+sudo apt-get install -y tmux
+#tree
+sudo apt-get install -y tree
 # zsh
 sudo apt-get install -y zsh
 sudo chsh -s /bin/zsh

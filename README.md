@@ -1,5 +1,7 @@
 # ubuntu-dev-setup #
 Installs the following
+* tmux (https://tmux.github.io/)
+* tree (http://mama.indstate.edu/users/ice/tree/)
 * zsh (http://www.zsh.org/)
 * oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 * flux (https://justgetflux.com/)

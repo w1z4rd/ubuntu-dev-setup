@@ -29,6 +29,14 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+# bouncycastle
+wget https://bouncycastle.org/download/bcprov-jdk15on-154.jar -O /tmp/bcprov-jdk15on-154.jar
+sudo mv /tmp/bcprov-jdk15on-154.jar /usr/lib/jvm/java-8-oracle/lib
+# scala
+wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz -O /tmp/scala-2.11.8.tgz
+sudo tar -xvzf /tmp/scala-2.11.8.tgz
+sudo mv /tmp/scala-2.11.8 /usr/local
+sudo update-alternatives --install /usr/bin/scala scala /usr/local/scala-2.11.8/bin/scala 1
 # maven 3.3.9
 sudo wget http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -O /tmp/apache-maven-3.3.9-bin.tar.gz
 cd /tmp

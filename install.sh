@@ -74,4 +74,6 @@ sudo ./install.sh
 sudo apt-get install -y posgresql-9.4
 # pgadmin3
 sudo apt-get install -y pgadmin3
+# silver searcher
+sudo apt-get install -y silversearcher-ag
 cd $dir

@@ -1,5 +1,5 @@
 #!/bin/bash
-tools=( "tmux" "tree" "zsh" "xflux" "vim" "unzip" "curl" "java" "mvn" "python" "g++" "virtualbox" "vagrant" "psql" "pgadmin3" "scala");
+tools=( "tmux" "tree" "zsh" "xflux" "vim" "unzip" "curl" "java" "mvn" "python" "g++" "virtualbox" "vagrant" "psql" "pgadmin3" "scala" "sbt" "node" "npm" );
 for tool in ${tools[@]}; 
 do
  echo "=======";

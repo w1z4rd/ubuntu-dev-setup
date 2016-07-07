@@ -35,7 +35,7 @@ sudo mv /tmp/bcprov-jdk15on-154.jar /usr/lib/jvm/java-8-oracle/lib
 # scala
 wget http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz -O /tmp/scala-2.11.8.tgz
 sudo tar -xvzf /tmp/scala-2.11.8.tgz
-sudo mv /tmp/scala-2.11.8 /usr/local
+sudo mv /tmp/scala-2.11.8 /usr/local/
 sudo update-alternatives --install /usr/bin/scala scala /usr/local/scala-2.11.8/bin/scala 1
 # maven 3.3.9
 sudo wget http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -O /tmp/apache-maven-3.3.9-bin.tar.gz
@@ -71,9 +71,21 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git /tmp/
 cd /tmp/gnome-terminal-color-solarized
 sudo ./install.sh
 # posgresql 9.4
-sudo apt-get install -y posgresql-9.4
+sudo apt-get install -y posgresql
 # pgadmin3
 sudo apt-get install -y pgadmin3
 # silver searcher
 sudo apt-get install -y silversearcher-ag
+#nodejs
+sudo wget https://nodejs.org/dist/v6.2.2/node-v6.2.2-linux-x64.tar.xz -O /tmp/node-v6.2.2-linux-x64.tar.xz
+sudo tar -xf node-v6.2.2-linux-x64.tar.xz
+sudo mv /tmp/node-v6.2.2-linux-x64 /usr/local/
+sudo update-alternatives --install /usr/bin/node node /usr/local/node-v6.2.2-linux-x64/bin/node 1
+sudo update-alternatives --install /usr/bin/npm npm /usr/local/node-v6.2.2-linux-x64/bin/npm 1
+rm node-v6.2.2-linux-x64.tar.xz
+#sbt
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
+sudo apt-get update
+sudo apt-get install sbt
 cd $dir

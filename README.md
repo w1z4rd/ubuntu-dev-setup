@@ -4,7 +4,7 @@ Installs the following
 * tree (http://mama.indstate.edu/users/ice/tree/)
 * zsh (http://www.zsh.org/)
 * oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
-* flux (https://justgetflux.com/)
+* redshift (http://jonls.dk/redshift/)
 * vim-nox (http://www.vim.org/)
 * derek-wyatt vim-config (https://github.com/derekwyatt/vim-config)
 * gnome-terminal-colors-solarized (https://github.com/Anthony25/gnome-terminal-colors-solarized)

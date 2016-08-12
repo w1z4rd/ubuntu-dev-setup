@@ -15,7 +15,7 @@ sudo apt-get install -y git
 sudo apt-get install -y vim-nox
 # derek wyatt vim-config
 git clone https://github.com/derekwyatt/vim-config.git ~/.vim
-ln ~/.vim/vimrc ~/.vimrc
+cp `basename $0`/vimrc ~/.vimrc
 # vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # unzip
@@ -61,11 +61,8 @@ sudo apt-get install -y VirtualBox
 sudo apt-get install -y virtualbox-dkms
 # vagrant
 sudo apt-get install -y vagrant
-# flux
-sudo add-apt-repository ppa:kilian/f.lux
-sudo sed -s 's/wily/trusty/g' /etc/apt/sources.list.d/kilian-ubuntu-f_lux-wily.list
-sudo apt-get update
-sudo apt-get install -y fluxgui
+#redshift
+sudo apt-get install -y redshift redshift-gtk
 # gnome-terminal-color-solarize
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized.git /tmp/gnome-terminal-color-solarized
 cd /tmp/gnome-terminal-color-solarized

@@ -57,7 +57,7 @@ sudo apt-get install -y g++
 # rpm
 sudo apt-get install -y rpm
 # VirtualBox
-sudo apt-get install -y VirtualBox
+sudo apt-get install -y virtualbox
 sudo apt-get install -y virtualbox-dkms
 # vagrant
 sudo apt-get install -y vagrant

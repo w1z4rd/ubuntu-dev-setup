@@ -87,7 +87,5 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
 sudo apt-get update
 sudo apt-get install sbt
 cd $dir
-#redshift
-sudo apt-get install -y redshift redshift-gtk
 #conky
 sudo apt-get install -y conky conky-all lm-sensors hddtemp

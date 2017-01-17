@@ -21,4 +21,3 @@ Installs the following
 * postgresql (http://www.postgresql.org/)
 * pgadmin3 (http://www.pgadmin.org/)
 * conky (https://github.com/brndnmtthws/conky)
-* redshift (https://github.com/jonls/redshift)

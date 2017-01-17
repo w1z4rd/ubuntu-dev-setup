@@ -1,0 +1,28 @@
+#######################################################################################
+###  Conky by http://gnome-look.org/content/show.php/conky+gray?content=155967     ####
+###  Modified by    :   http://www.NoobsLab.com                                    ####
+#######################################################################################
+
+double_buffer yes
+own_window_class conky
+own_window yes
+own_window_type conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+draw_borders no
+draw_graph_borders no
+border_margin 3
+draw_shades yes
+gap_x 0
+gap_y 5
+alignment bottom_left
+update_interval 1
+default_color  010101
+own_window_colour FFFFFF
+use_xft yes
+xftfont sans:size=11
+override_utf8_locale yes
+use_spacer none
+minimum_size 1920 0
+TEXT
+${goto 5}Date: ${color BD4D4D}${font sans:size=11}${time %d/%m/%y}${color}${font}  Time: ${color BD4D4D}${font sans:size=11}${time %H:%M}${color}${font}  |  Kernel: ${color BD4D4D}${font sans:size=11}$kernel${color}${font}  |  Uptime: ${color BD4D4D}${font sans:size=11}${uptime_short}${color}${font}  |  Cpu: ${color BD4D4D}${font sans:size=11}${cpu}%${color}${font}  Ram: ${color BD4D4D}${font sans:size=11}${memperc}%${color}${font}  Swap: ${color BD4D4D}${font sans:size=11}${swapperc}%${color}${font}  |  ${color}${font}Hdd:${color BD4D4D}${font sans:size=11} ${fs_used_perc /}% ${fs_used /} / ${fs_size /}  |  ${color}${font}Local ip ${color BD4D4D}${font sans:size=11}${addr enp8s0}${font}${color}

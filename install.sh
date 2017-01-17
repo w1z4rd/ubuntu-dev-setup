@@ -25,6 +25,7 @@ sudo apt-get install -y curl
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # java 8
+# TODO: update to unattended install
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
@@ -86,3 +87,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
 sudo apt-get update
 sudo apt-get install sbt
 cd $dir
+#redshift
+sudo apt-get install -y redshift redshift-gtk
+#conky
+sudo apt-get install -y conky conky-all lm-sensors hddtemp

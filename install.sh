@@ -86,6 +86,21 @@ echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.li
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823
 sudo apt-get update
 sudo apt-get install sbt
-cd $dir
 #conky
 sudo apt-get install -y conky conky-all lm-sensors hddtemp
+# ubuntu theme
+# arc-theme dark
+sudo add-apt-repository ppa:noobslab/themes
+sudo apt-get update
+sudo apt-get install -y arc-theme
+# mocka icons
+sudo add-apt-repository ppa:moka/daily
+sudo apt-get update
+sudo apt-get install -y moka-icon-theme
+# arc-icon
+git clone https://github.com/horst3180/arc-icon-theme --depth 1
+sudo cp -a arc-icon-theme/Arc /usr/share/icons
+# unity tweak tool
+sudo apt-get install unity-tweak-tool
+
+cd $dir

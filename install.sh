@@ -11,6 +11,9 @@ sudo apt-get install -y zsh
 sudo chsh -s /bin/zsh
 # git
 sudo apt-get install -y git
+git config --global pack.windowMemory "1024m" 
+git config --global pack.packSizeLimit "1024m"
+git config --global pack.threads "4"
 # vim
 sudo apt-get install -y vim-nox
 # derek wyatt vim-config

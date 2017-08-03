@@ -18,7 +18,7 @@ git config --global pack.threads "4"
 sudo apt-get install -y vim-nox
 # derek wyatt vim-config
 git clone https://github.com/derekwyatt/vim-config.git ~/.vim
-cp `basename $0`/vim/vimrc ~/.vimrc
+cp "$(dirname ${0})"/vim/vimrc ~/.vimrc
 # vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # unzip
@@ -28,18 +28,8 @@ sudo apt-get install -y curl
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd /tmp
-# setting and maven java options
-sudo echo '_JAVA_OPTS="-Xmx8192m -XX:MaxPermSize=1024m -Djava.awt.headless=true"' >> /etc/environment
-sudo echo 'MAVEN_OPTS="-Xms1024m -Xmx8192m -XX:PermSize=1024m"' >> /etc/environment
-# python 2.7
-wget https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea -O /tmp/setuptools-0.6c11-py2.7.egg
-sudo sh /tmp/setuptools-0.6c11-py2.7.egg
-sudo apt-get install -y python-dev
-sudo apt-get install -y python-setuptools
 # g++
 sudo apt-get install -y g++
-# rpm
-sudo apt-get install -y rpm
 # sdk man
 curl -s "https://get.sdkman.io" | bash
 #redshift
@@ -68,14 +58,12 @@ git clone https://github.com/horst3180/arc-icon-theme --depth 1
 sudo cp -a arc-icon-theme/Arc /usr/share/icons
 # unity tweak tool
 sudo apt-get install -y unity-tweak-tool
+# compiz-config-manager
+sudo apt-get install -y compizconfig-settings-manager
 # national geographic wallpaper
 sudo add-apt-repository ppa:atareao/atareao 
 sudo apt-get update
 sudo apt-get install -y national-geographic-wallpaper
-# fingerprint
-sudo add-apt-repository ppa:fingerprint/fingerprint-gui
-sudo apt update
-sudo apt install -y libbsapi policykit-1-fingerprint-gui fingerprint-gui
 # compiz config manager
 sudo apt install -y compizconfig-settings-manager
 # dnscrypt-proxy
@@ -85,10 +73,13 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
 echo 'deb https://repo.windscribe.com/ubuntu xenial main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
 sudo apt-get update
 sudo apt-get install windscribe-cli
-
+# setting
+sudo echo 'JAVA_OPTS="-Xmx8192m -XX:MaxPermSize=1024m -Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom"' >> /etc/environment
+sudo echo 'MAVEN_OPTS="-Xms1024m -Xmx8192m -XX:PermSize=1024m"' >> /etc/environment
+sudo echo 'EDITOR="/usr/bin/vim"' >> /etc/environment
 
 cd $dir
 echo "To complete the instaltion"
 echo "Open a new terminal window and run 'source "$HOME/.sdkman/bin/sdkman-init.sh"'"
-echo "Open vin and run :VundleInstall"
+echo "Open zsh and vim and run :VundleInstall"
 

@@ -148,6 +148,10 @@ set showmode
 " Switch on syntax highlighting.
 syntax on
 
+" Coloscheme
+set background=dark
+colorscheme solarized
+
 " Hide the mouse pointer while typing
 set mousehide
 

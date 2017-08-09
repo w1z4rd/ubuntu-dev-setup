@@ -1,0 +1,99 @@
+#!/bin/bash
+
+die () {
+  echo
+  echo "$*"
+  echo
+  exit 1
+}
+
+USAGE="Usage ${0} {start|stop}"
+
+if [ $# -ne 1 ]; then
+  die "${USAGE}"
+fi
+
+set -o errexit
+
+WORK_DIR=$(dirname $(readlink -f ${0}))
+CREDS_FILE="/tmp/creds"
+PID_FILE="/tmp/windscribe.pid"
+LOG_FILE="/tmp/windscribe.log"
+
+cleanup_file() {
+  if [ -f $* ]; then
+    shred -f -u -z -n 19 $*
+  fi
+}
+
+setup_creds() {
+  echo "w1z4rd19_5nzedwq" > ${CREDS_FILE}
+  pass show w1z4rd19_5nzedwq >> ${CREDS_FILE}
+  chmod 400 ${CREDS_FILE}
+}
+
+cleanup_creds() {
+  cleanup_file ${CREDS_FILE}
+}
+
+cleanup() {
+  cleanup_file ${PID_FILE}
+  cleanup_file ${LOG_FILE}
+  cleanup_file ${CREDS_FILE}
+}
+
+remove_default_route() {
+  echo "Removing default route..."
+  sudo ip route del default via 192.168.178.1
+}
+
+add_default_route() {
+  echo "Adding default route..."
+  sudo ip route add default via 192.168.178.1
+}
+
+start_vpn() {
+  echo "Starting VPN..."
+  setup_creds
+  VPN_PID="$(sudo openvpn --config ${WORK_DIR}/windscribe.ovpn --auth-user-pass ${CREDS_FILE} --auth-nocache > ${LOG_FILE} 2>&1 & echo $!)"
+  if [ ! -f ${PID_FILE} ]; then
+    echo "${VPN_PID}" > "${PID_FILE}"
+  else
+    sed -i "1s/.*/${VPN_PID}/" "${PID_FILE}" > /dev/null 2>&1
+  fi
+  sleep 2
+  cleanup_creds
+  echo "VPN started successfully!"
+}
+
+stop_vpn() {
+  echo "Stopping VPN..."
+  if [ ! -f ${PID_FILE} ] || ! sudo kill -0 $(cat ${PID_FILE} | head -n 1); then
+    die "ERROR: VPN Service not running"
+  fi
+  sudo kill -15 $(cat ${PID_FILE} | head -n 1)
+  echo "VPN stopped successfully!"
+}
+
+start() {
+  cleanup
+  start_vpn
+  sleep 3
+  remove_default_route
+}
+
+stop() {
+  stop_vpn
+  add_default_route
+}
+
+case $1 in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  *)
+    die "${USAGE}"
+esac

@@ -149,6 +149,7 @@ set showmode
 syntax on
 
 " Coloscheme
+set term=screen-256color
 set background=dark
 colorscheme solarized
 

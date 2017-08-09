@@ -18,7 +18,7 @@ git config --global pack.threads "4"
 sudo apt-get install -y vim-nox
 # derek wyatt vim-config
 git clone https://github.com/derekwyatt/vim-config.git ~/.vim
-cp "$(dirname ${0})"/vim/vimrc ~/.vimrc
+cp "$(dirname $(readlink -f ${0}))"/vim/vimrc ~/.vimrc
 # vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # unzip
